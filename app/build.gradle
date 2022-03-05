@@ -7,4 +7,6 @@ dependencies {
 
 	implementation Dependencies.KOTLIN_STANDARD_LIBRARY
 	implementation Dependencies.MATERIAL
+	implementation Dependencies.KOIN_ANDROID
+	implementation Dependencies.KOIN_CORE
 }
