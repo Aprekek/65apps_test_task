@@ -6,6 +6,7 @@ import org.koin.core.context.startKoin
 import ru.apps65.testtask.database.di.databaseModule
 import ru.apps65.testtask.di.appModule
 import ru.apps65.testtask.di.globalNavigationModule
+import ru.apps65.testtask.network.di.networkModule
 
 class App : Application() {
 
@@ -19,6 +20,7 @@ class App : Application() {
 				appModule,
 				globalNavigationModule,
 				databaseModule,
+				networkModule,
 			)
 		}
 	}
