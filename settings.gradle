@@ -1,2 +1,3 @@
 rootProject.name = "Apps65"
 include ':app'
+include ':database'
