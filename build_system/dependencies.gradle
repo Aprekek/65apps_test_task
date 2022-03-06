@@ -1,6 +1,7 @@
 apply from: 'build_system/versions.gradle'
 ext.Dependencies = [
 	GRADLE                 : "com.android.tools.build:gradle:${Versions.GRADLE}",
+	MULTIDEX               : "androidx.multidex:multidex:${Versions.MULTIDEX}",
 
 	KOTLIN                 : "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.KOTLIN}",
 	KOTLIN_STANDARD_LIBRARY: "org.jetbrains.kotlin:kotlin-stdlib:${Versions.KOTLIN}",

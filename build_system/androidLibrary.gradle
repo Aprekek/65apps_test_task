@@ -7,6 +7,8 @@ android {
 	defaultConfig {
 		minSdkVersion Configs.MIN_SDK
 		targetSdkVersion Configs.TARGET_SDK
+
+		multiDexEnabled = true
 	}
 
 	buildTypes {
@@ -26,5 +28,10 @@ android {
 
 	kotlinOptions {
 		jvmTarget = Configs.JVM_TARGET
+	}
+
+	dependencies {
+
+		implementation Dependencies.MULTIDEX
 	}
 }

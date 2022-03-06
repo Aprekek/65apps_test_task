@@ -15,4 +15,5 @@ ext.Versions = [
 	CONSTRAINT_LAYOUT  : "2.0.4",
 	CICERONE           : "7.1",
 	GLIDE              : "4.13.1",
+	MULTIDEX           : "2.0.1"
 ]
