@@ -7,6 +7,7 @@ import ru.apps65.testtask.database.di.databaseModule
 import ru.apps65.testtask.di.appModule
 import ru.apps65.testtask.di.globalNavigationModule
 import ru.apps65.testtask.network.di.networkModule
+import ru.apps65.testtask.shared.speciality.domain.di.specialityDomainModule
 
 class App : MultiDexApplication() {
 
@@ -21,6 +22,7 @@ class App : MultiDexApplication() {
 				globalNavigationModule,
 				databaseModule,
 				networkModule,
+				specialityDomainModule,
 			)
 		}
 	}
