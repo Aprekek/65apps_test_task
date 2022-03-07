@@ -2,3 +2,4 @@ rootProject.name = "Apps65"
 include ':app'
 include ':database'
 include ':network'
+include ':shared:speciality:domain'
