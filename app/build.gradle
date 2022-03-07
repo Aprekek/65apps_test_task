@@ -13,6 +13,7 @@ dependencies {
 
 	implementation project(":database")
 	implementation project(":network")
+	implementation project(":themes")
 	implementation project(":shared:speciality:domain")
 	implementation project(":shared:speciality:data")
 	implementation project(":shared:scenarios:jobinfo")
