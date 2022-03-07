@@ -1,0 +1,8 @@
+apply plugin: Plugins.KOTLIN
+
+apply from: "$rootDir/build_system/kotlinLibrary.gradle"
+
+dependencies {
+
+	implementation project(":shared:speciality:domain")
+}
