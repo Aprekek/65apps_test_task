@@ -16,7 +16,7 @@ class EmployeeKeyGenerator(
 		const val KEY_TAG = "key_tag"
 	}
 
-	private val key = AtomicLong(0)
+	private val key = AtomicLong(0L)
 	private val scope = CoroutineScope(Job() + Dispatchers.IO)
 
 	fun getNewKey() = key.getAndIncrement()
@@ -28,7 +28,7 @@ class EmployeeKeyGenerator(
 	}
 
 	private fun restoreLastKeyValue() {
-		key.set(sharedPreferences.getLong(KEY_TAG, 0))
+		key.set(sharedPreferences.getLong(KEY_TAG, 0L))
 	}
 
 	fun saveKey() {
