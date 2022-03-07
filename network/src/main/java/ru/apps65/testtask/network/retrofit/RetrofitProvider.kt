@@ -16,5 +16,5 @@ object RetrofitProvider {
 		.addConverterFactory(MoshiConverterFactory.create(moshi))
 		.build()
 
-	 inline fun <reified T> createApi() = retrofit.create(T::class.java)
+	inline fun <reified T> createApi(): T = retrofit.create(T::class.java)
 }
