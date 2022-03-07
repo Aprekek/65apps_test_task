@@ -17,4 +17,5 @@ dependencies {
 	implementation project(":shared:speciality:domain")
 	implementation project(":shared:speciality:data")
 	implementation project(":shared:scenarios:jobinfo")
+	implementation project(":features:specialities")
 }

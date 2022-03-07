@@ -8,4 +8,5 @@ import ru.apps65.testtask.navigation.createCicerone
 val globalNavigationModule = module {
 	single { createCicerone() }
 	single { get<Cicerone<Router>>().router }
+	single { get<Cicerone<Router>>().getNavigatorHolder() }
 }

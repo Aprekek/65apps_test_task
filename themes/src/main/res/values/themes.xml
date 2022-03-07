@@ -7,6 +7,10 @@
 		<item name="colorPrimaryVariant">@color/blue_dark</item>
 		<item name="colorOnPrimary">@color/white</item>
 
+		<item name="colorSecondary">@color/blue_dark</item>
+
+		<item name="cardRippleColor">@color/blue_light</item>
+
 		<item tools:targetApi="l"
 			name="android:statusBarColor">?attr/colorPrimary
 		</item>
