@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<style name="Theme.Apps65.AppBarTitle">
+		<item name="android:textSize">@dimen/appBarTitleTextSize</item>
+		<item name="android:textColor">?attr/colorOnPrimary</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:maxLines">1</item>
+	</style>
+
+	<style name="Theme.Apps65.Card"
+		parent="Theme.Apps65.CardBase"/>
+
+	<style name="Theme.Apps65.CardBase"
+		parent="Widget.MaterialComponents.CardView">
+		<item name="android:layout_marginTop">@dimen/small_margin_padding</item>
+		<item name="android:layout_marginBottom">@dimen/small_margin_padding</item>
+		<item name="android:layout_marginLeft">@dimen/medium_margin_padding</item>
+		<item name="android:layout_marginRight">@dimen/medium_margin_padding</item>
+		<item name="cardCornerRadius">@dimen/card_corner_radius</item>
+		<item name="rippleColor">?attr/cardRippleColor</item>
+	</style>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<style name="Theme.Apps65.Card"
+		parent="Theme.Apps65.CardBase">
+		<item name="android:layout_marginStart">@dimen/medium_margin_padding</item>
+		<item name="android:layout_marginEnd">@dimen/medium_margin_padding</item>
+	</style>
+</resources>
