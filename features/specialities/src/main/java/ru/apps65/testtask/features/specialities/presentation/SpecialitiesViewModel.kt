@@ -4,7 +4,6 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.CoroutineExceptionHandler
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
@@ -33,11 +32,7 @@ class SpecialitiesViewModel(
 
 	fun reload() {
 		_state.value = SpecialitiesState.Loading
-		viewModelScope.launch(exceptionHandler) {
-			delay(1000)
-			val specialities = getSpecialitiesUseCase()
-			_state.value = SpecialitiesState.Content(specialities)
-		}
+		fetchDataAndLoadSpecialities()
 	}
 
 	fun onSpecialitySelected(specialityId: Long) {
@@ -46,8 +41,12 @@ class SpecialitiesViewModel(
 
 	private fun fetchDataAndLoadSpecialities() {
 		viewModelScope.launch(exceptionHandler) {
-			updateJobInfoScenario()
-			val specialities = getSpecialitiesUseCase()
+			val specialities = getSpecialitiesUseCase().takeIf {
+				it.isNotEmpty()
+			} ?: kotlin.run {
+				updateJobInfoScenario()
+				getSpecialitiesUseCase()
+			}
 			_state.value = SpecialitiesState.Content(specialities)
 		}
 	}
