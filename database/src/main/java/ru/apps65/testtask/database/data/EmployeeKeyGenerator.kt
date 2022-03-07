@@ -5,7 +5,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import java.util.concurrent.atomic.AtomicInteger
+import java.util.concurrent.atomic.AtomicLong
 
 class EmployeeKeyGenerator(
 	private val sharedPreferences: SharedPreferences
@@ -16,8 +16,8 @@ class EmployeeKeyGenerator(
 		const val KEY_TAG = "key_tag"
 	}
 
-	private val key = AtomicInteger(0)
-	private val scope = CoroutineScope(Job() + Dispatchers.Default)
+	private val key = AtomicLong(0)
+	private val scope = CoroutineScope(Job() + Dispatchers.IO)
 
 	fun getNewKey() = key.getAndIncrement()
 
@@ -28,10 +28,10 @@ class EmployeeKeyGenerator(
 	}
 
 	private fun restoreLastKeyValue() {
-		key.set(sharedPreferences.getInt(KEY_TAG, 0))
+		key.set(sharedPreferences.getLong(KEY_TAG, 0))
 	}
 
 	fun saveKey() {
-		sharedPreferences.edit().putInt(KEY_TAG, key.get()).apply()
+		sharedPreferences.edit().putLong(KEY_TAG, key.get()).apply()
 	}
 }
