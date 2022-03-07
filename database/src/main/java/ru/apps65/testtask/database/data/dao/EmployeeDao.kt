@@ -13,8 +13,16 @@ interface EmployeeDao {
 	@Insert(onConflict = REPLACE)
 	suspend fun insert(employees: List<EmployeeDto>)
 
-	@Query("SELECT * FROM employee_table")
-	suspend fun get(): List<EmployeeDto>
+	@Query(
+		"SELECT employee_table.*, speciality_table.* " +
+			"FROM employee_table " +
+			"JOIN ( " +
+			"    SELECT specialityId AS spec_Id, personId AS pers_Id " +
+			"    FROM speciality_employee_link_table) " +
+			"ON personId = pers_Id " +
+			"JOIN speciality_table ON specId = spec_Id"
+	)
+	suspend fun get(): Map<EmployeeDto, List<SpecialityDto>>
 
 	@Query(
 		"SELECT employee_table.*, speciality_table.* " +
@@ -27,5 +35,5 @@ interface EmployeeDao {
 			"ON personId = pers_Id " +
 			"JOIN speciality_table ON specId = spec_Id"
 	)
-	suspend fun getEmployeeWithFilter(specialityFilter: List<Long>, size: Long): Map<EmployeeDto, List<SpecialityDto>>
+	suspend fun getEmployeeWithFilter(specialityFilter: List<Long>, size: Int): Map<EmployeeDto, List<SpecialityDto>>
 }
