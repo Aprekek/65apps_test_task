@@ -31,10 +31,8 @@ class SpecialitiesViewModel(
 	}
 
 	fun reload() {
-		viewModelScope.launch(exceptionHandler) {
-			val specialities = getSpecialitiesUseCase()
-			_state.value = SpecialitiesState.Content(specialities)
-		}
+		_state.value = SpecialitiesState.Loading
+		fetchDataAndLoadSpecialities()
 	}
 
 	fun onSpecialitySelected(specialityId: Long) {
@@ -43,8 +41,12 @@ class SpecialitiesViewModel(
 
 	private fun fetchDataAndLoadSpecialities() {
 		viewModelScope.launch(exceptionHandler) {
-			updateJobInfoScenario()
-			val specialities = getSpecialitiesUseCase()
+			val specialities = getSpecialitiesUseCase().takeIf {
+				it.isNotEmpty()
+			} ?: kotlin.run {
+				updateJobInfoScenario()
+				getSpecialitiesUseCase()
+			}
 			_state.value = SpecialitiesState.Content(specialities)
 		}
 	}

@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="specialities_title">Специальности</string>
+	<string name="specialities_error_text">Не удалось загрузить данные!</string>
+	<string name="specialities_reload_text">Повторить</string>
 </resources>
