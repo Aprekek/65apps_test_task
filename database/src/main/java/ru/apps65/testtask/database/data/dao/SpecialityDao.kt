@@ -10,7 +10,7 @@ import ru.apps65.testtask.database.data.dto.SpecialityDto
 interface SpecialityDao {
 
 	@Insert(onConflict = REPLACE)
-	suspend fun insert(specialities: List<SpecialityDto>): List<Long>
+	suspend fun insert(specialities: List<SpecialityDto>)
 
 	@Query("SELECT * FROM speciality_table")
 	suspend fun get(): List<SpecialityDto>
