@@ -7,6 +7,7 @@ import ru.apps65.testtask.database.di.databaseModule
 import ru.apps65.testtask.di.appModule
 import ru.apps65.testtask.di.globalNavigationModule
 import ru.apps65.testtask.network.di.networkModule
+import ru.apps65.testtask.shared.scenarios.jobinfo.di.jobInfoScenarioModule
 import ru.apps65.testtask.shared.speciality.data.di.specialityDataModule
 import ru.apps65.testtask.shared.speciality.domain.di.specialityDomainModule
 
@@ -25,6 +26,7 @@ class App : MultiDexApplication() {
 				networkModule,
 				specialityDomainModule,
 				specialityDataModule,
+				jobInfoScenarioModule,
 			)
 		}
 	}
