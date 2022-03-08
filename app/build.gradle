@@ -19,5 +19,5 @@ dependencies {
 	implementation project(":shared:emoloyee:domain")
 	implementation project(":shared:scenarios:jobinfo")
 	implementation project(":features:specialities")
-	implementation project(":features:employees")
+	implementation project(':features:employees:list')
 }
