@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="employees_title">Сотрудники</string>
+	<string name="employees_date">%s %s</string>
+	<string name="empty_date">—</string>
 </resources>
