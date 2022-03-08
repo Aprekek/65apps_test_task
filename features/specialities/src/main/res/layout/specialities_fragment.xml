@@ -30,34 +30,12 @@
 			android:layout_height="wrap_content"
 			android:layout_gravity="center"/>
 
-		<LinearLayout
-			android:id="@+id/error_message"
+		<ViewStub
+			android:id="@+id/error_message_stub"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_gravity="center"
-			android:visibility="gone"
-			android:orientation="vertical"
-			tools:visibility="visible">
-
-			<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:textColor="?attr/colorOnSurface"
-				android:textSize="@dimen/mediumDescriptionTextSize"
-				android:text="@string/specialities_error_text"/>
-
-			<com.google.android.material.button.MaterialButton
-				android:id="@+id/reload_button"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_gravity="center"
-				android:layout_marginTop="@dimen/medium_margin_padding"
-				android:paddingHorizontal="@dimen/large_margin_padding"
-				android:paddingVertical="@dimen/medium_large_margin_padding"
-				android:textColor="@color/white"
-				android:text="@string/specialities_reload_text"
-				app:cornerRadius="@dimen/corner_radius"/>
-		</LinearLayout>
+			android:layout="@layout/error_layout"/>
 
 		<androidx.recyclerview.widget.RecyclerView
 			android:id="@+id/recycler_view"
