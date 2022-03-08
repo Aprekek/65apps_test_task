@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import com.bumptech.glide.Glide
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
@@ -51,7 +53,7 @@ class EmployeesFragment : BaseFragment<EmployeesFragmentBinding>() {
 	}
 
 	private fun initAdapter() {
-		adapter = EmployeesAdapter(requireContext(), viewModel::onEmployeeSelect)
+		adapter = EmployeesAdapter(::loadImageForItem, viewModel::onEmployeeSelect)
 		binding.recyclerView.adapter = adapter
 	}
 
@@ -120,5 +122,13 @@ class EmployeesFragment : BaseFragment<EmployeesFragmentBinding>() {
 	override fun onDestroy() {
 		super.onDestroy()
 		errorMessageBinding = null
+	}
+
+	fun loadImageForItem(view: ImageView, url: String?) {
+		Glide.with(this)
+			.load(url)
+			.placeholder(ru.apps65.testtask.themes.R.drawable.ic_person)
+			.centerCrop()
+			.into(view)
 	}
 }

@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import com.bumptech.glide.Glide
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
@@ -68,6 +69,11 @@ class EmployeeDetailsFragment : BaseFragment<EmployeeDetailsFragmentBinding>() {
 		val employee = state.employee
 		val age = state.age
 		val spannableBuilder = SpannableStringBuilder()
+
+		Glide.with(this)
+			.load(employee.avatarUrl)
+			.placeholder(ru.apps65.testtask.themes.R.drawable.ic_person)
+			.into(binding.personImage)
 
 		binding.fullName.text = resources.getString(R.string.full_name, employee.firstName, employee.lastName)
 
