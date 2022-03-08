@@ -1,0 +1,23 @@
+apply plugin: Plugins.ANDROID_LIBRARY
+apply plugin: Plugins.KOTLIN_ANDROID
+
+apply from: "$rootDir/build_system/androidLibrary.gradle"
+
+dependencies {
+
+	implementation Dependencies.KOIN_CORE
+	implementation Dependencies.KOIN_ANDROID
+	implementation Dependencies.MATERIAL
+	implementation Dependencies.CICERONE
+	implementation Dependencies.LIFECYCLE_VIEWMODEL
+	implementation Dependencies.LIFECYCLE_RUNTIME
+	implementation Dependencies.COROUTINES_CORE
+	implementation Dependencies.GLIDE
+
+	implementation project(":themes")
+	implementation project(":shared:emoloyee:domain")
+	implementation project(":shared:speciality:domain")
+
+	implementation project(":shared:ui")
+	implementation project(":themes")
+}
