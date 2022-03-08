@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/error_message"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:layout_gravity="center"
+	android:orientation="vertical">
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textColor="?attr/colorOnSurface"
+		android:textSize="@dimen/mediumDescriptionTextSize"
+		android:text="@string/loading_error_text"/>
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/reload_button"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:layout_marginTop="@dimen/medium_margin_padding"
+		android:paddingHorizontal="@dimen/large_margin_padding"
+		android:paddingVertical="@dimen/medium_large_margin_padding"
+		android:text="@string/reload_text"
+		app:cornerRadius="@dimen/medium_corner_radius"/>
+</LinearLayout>

@@ -14,6 +14,7 @@ import ru.apps65.testtask.features.specialities.presentation.SpecialitiesViewMod
 import ru.apps65.testtask.features.specialities.presentation.states.SpecialitiesState
 import ru.apps65.testtask.features.specialities.ui.adapter.SpecialitiesListAdapter
 import ru.apps65.testtask.shared.speciality.domain.entities.Speciality
+import ru.apps65.testtask.shared.ui.databinding.ErrorLayoutBinding
 import ru.apps65.testtask.shared.ui.fragments.BaseFragment
 
 class SpecialitiesFragment : BaseFragment<SpecialitiesFragmentBinding>() {
@@ -26,6 +27,8 @@ class SpecialitiesFragment : BaseFragment<SpecialitiesFragmentBinding>() {
 	private val viewModel: SpecialitiesViewModel by viewModel()
 	private lateinit var adapter: SpecialitiesListAdapter
 
+	private var errorMessageBinding: ErrorLayoutBinding? = null
+
 	override fun getBinding(inflater: LayoutInflater, container: ViewGroup?) =
 		SpecialitiesFragmentBinding.inflate(inflater, container, false)
 
@@ -33,7 +36,6 @@ class SpecialitiesFragment : BaseFragment<SpecialitiesFragmentBinding>() {
 		super.onViewCreated(view, savedInstanceState)
 		initAdapter()
 		initObservers()
-		initListeners()
 	}
 
 	private fun initAdapter() {
@@ -50,12 +52,6 @@ class SpecialitiesFragment : BaseFragment<SpecialitiesFragmentBinding>() {
 		}
 	}
 
-	private fun initListeners() {
-		binding.reloadButton.setOnClickListener {
-			viewModel.reload()
-		}
-	}
-
 	private fun handleState(state: SpecialitiesState) {
 		when (state) {
 			is SpecialitiesState.Initial,
@@ -68,7 +64,7 @@ class SpecialitiesFragment : BaseFragment<SpecialitiesFragmentBinding>() {
 	private fun showLoading() {
 		binding.progressBar.visibility = View.VISIBLE
 		binding.recyclerView.visibility = View.GONE
-		binding.errorMessage.visibility = View.GONE
+		errorMessageBinding?.root?.visibility = View.GONE
 	}
 
 	private fun showContent(specialities: List<Speciality>) {
@@ -79,6 +75,27 @@ class SpecialitiesFragment : BaseFragment<SpecialitiesFragmentBinding>() {
 
 	private fun showError() {
 		binding.progressBar.visibility = View.GONE
-		binding.errorMessage.visibility = View.VISIBLE
+		showErrorMessage()
+	}
+
+	private fun showErrorMessage() {
+		if (errorMessageBinding == null) {
+			inflateErrorMessage()
+		}
+		errorMessageBinding?.root?.visibility = View.VISIBLE
+	}
+
+	private fun inflateErrorMessage() {
+		errorMessageBinding = ErrorLayoutBinding.bind(
+			binding.errorMessageStub.inflate()
+		)
+		errorMessageBinding?.reloadButton?.setOnClickListener {
+			viewModel.reload()
+		}
+	}
+
+	override fun onDestroy() {
+		super.onDestroy()
+		errorMessageBinding = null
 	}
 }

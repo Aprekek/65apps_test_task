@@ -16,7 +16,7 @@
 		<item name="android:layout_marginBottom">@dimen/small_margin_padding</item>
 		<item name="android:layout_marginLeft">@dimen/medium_margin_padding</item>
 		<item name="android:layout_marginRight">@dimen/medium_margin_padding</item>
-		<item name="cardCornerRadius">@dimen/corner_radius</item>
+		<item name="cardCornerRadius">@dimen/medium_corner_radius</item>
 		<item name="rippleColor">?attr/cardRippleColor</item>
 	</style>
 </resources>
