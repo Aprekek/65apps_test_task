@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<dimen name="personIconSize">55dp</dimen>
+
+	<dimen name="employeeNameTextSize">18sp</dimen>
+	<dimen name="employeeDateTextSize">16sp</dimen>
+</resources>
