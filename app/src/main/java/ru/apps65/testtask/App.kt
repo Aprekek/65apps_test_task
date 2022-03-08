@@ -8,6 +8,7 @@ import ru.apps65.testtask.database.di.databaseModule
 import ru.apps65.testtask.di.appModule
 import ru.apps65.testtask.di.globalNavigationModule
 import ru.apps65.testtask.di.routersModule
+import ru.apps65.testtask.features.employees.details.di.employeeDetailsModule
 import ru.apps65.testtask.features.specialities.di.specialitiesFeatureModule
 import ru.apps65.testtask.network.di.networkModule
 import ru.apps65.testtask.shared.scenarios.jobinfo.di.jobInfoScenarioModule
@@ -32,7 +33,8 @@ class App : MultiDexApplication() {
 				specialitiesFeatureModule,
 				jobInfoScenarioModule,
 				routersModule,
-				employeesFeatureModule
+				employeesFeatureModule,
+				employeeDetailsModule,
 			)
 		}
 	}

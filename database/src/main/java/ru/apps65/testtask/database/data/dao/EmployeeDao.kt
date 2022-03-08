@@ -20,7 +20,8 @@ interface EmployeeDao {
 			"    SELECT specialityId AS spec_Id, personId AS pers_Id " +
 			"    FROM speciality_employee_link_table) " +
 			"ON personId = pers_Id " +
-			"JOIN speciality_table ON specId = spec_Id"
+			"JOIN speciality_table ON specId = spec_Id " +
+			"OR personId IN (SELECT personId FROM speciality_employee_link_table WHERE specialityId != spec_Id)"
 	)
 	suspend fun get(): Map<EmployeeDto, List<SpecialityDto>>
 
@@ -33,7 +34,8 @@ interface EmployeeDao {
 			"    WHERE spec_Id IN (:specialityFilter)   " +
 			"    GROUP by pers_Id HAVING COUNT(pers_Id) >= :size) " +
 			"ON personId = pers_Id " +
-			"JOIN speciality_table ON specId = spec_Id"
+			"JOIN speciality_table ON specId = spec_Id " +
+			"OR personId IN (SELECT personId FROM speciality_employee_link_table WHERE specialityId != spec_Id)"
 	)
 	suspend fun getEmployeeWithFilter(specialityFilter: List<Long>, size: Int): Map<EmployeeDto, List<SpecialityDto>>
 }
