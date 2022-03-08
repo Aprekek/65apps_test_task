@@ -12,12 +12,11 @@ dependencies {
 	implementation Dependencies.LIFECYCLE_RUNTIME
 	implementation Dependencies.COROUTINES_CORE
 	implementation Dependencies.CICERONE
+	implementation Dependencies.GLIDE
 
-	implementation project(":network")
 	implementation project(":database")
 	implementation project(":themes")
 	implementation project(":shared:speciality:domain")
-	implementation project(":shared:speciality:data")
-	implementation project(":shared:scenarios:jobinfo")
+	implementation project(":shared:emoloyee:domain")
 	implementation project(":shared:ui")
 }

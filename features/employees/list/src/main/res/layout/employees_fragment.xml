@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
@@ -12,10 +13,16 @@
 		android:layout_height="?attr/actionBarSize"
 		style="@style/Theme.Apps65.Toolbar">
 
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/back_button"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			style="@style/Theme.Apps65.BackButton"/>
+
 		<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:text="@string/specialities_title"
+			android:text="@string/employees_title"
 			style="@style/Theme.Apps65.AppBarTitle"/>
 	</com.google.android.material.appbar.MaterialToolbar>
 
@@ -28,6 +35,15 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_gravity="center"/>
+
+		<TextView
+			android:id="@+id/empty_list_message"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:visibility="gone"
+			android:text="@string/nothing_was_found"
+			style="@style/Theme.Apps65.DescriptionText"/>
 
 		<ViewStub
 			android:id="@+id/error_message_stub"
@@ -42,7 +58,7 @@
 			android:layout_height="match_parent"
 			android:visibility="gone"
 			app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-			tools:listitem="@layout/speciality_item"
+			tools:listitem="@layout/employee_item"
 			tools:visibility="visible"/>
 	</FrameLayout>
 </LinearLayout>

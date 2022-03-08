@@ -7,6 +7,11 @@
 		<item name="android:maxLines">1</item>
 	</style>
 
+	<style name="Theme.Apps65.DescriptionText">
+		<item name="android:textColor">?attr/colorOnSurface</item>
+		<item name="android:textSize">@dimen/mediumDescriptionTextSize</item>
+	</style>
+
 	<style name="Theme.Apps65.Card"
 		parent="Theme.Apps65.CardBase"/>
 
@@ -18,5 +23,26 @@
 		<item name="android:layout_marginRight">@dimen/medium_margin_padding</item>
 		<item name="cardCornerRadius">@dimen/medium_corner_radius</item>
 		<item name="rippleColor">?attr/cardRippleColor</item>
+	</style>
+
+	<style name="Theme.Apps65.Toolbar"
+		parent="Widget.MaterialComponents.Toolbar.Primary">
+	</style>
+
+	<style name="Theme.Apps65.BackButton"
+		parent="Widget.MaterialComponents.Button.TextButton">
+		<item name="icon">@drawable/ic_arrow_back</item>
+		<item name="iconGravity">start</item>
+		<item name="android:minWidth">@dimen/zero_size</item>
+		<item name="android:paddingTop">@dimen/medium_large_margin_padding</item>
+		<item name="android:paddingBottom">@dimen/medium_large_margin_padding</item>
+		<item name="android:layout_marginRight">@dimen/medium_margin_padding</item>
+		<item name="cornerRadius">@dimen/large_corner_radius</item>
+		<item name="iconTint">?colorOnPrimary</item>
+		<item name="rippleColor">?colorOnPrimary</item>
+	</style>
+
+	<style name="Theme.Apps65.RoundedImage">
+		<item name="cornerSize">50%</item>
 	</style>
 </resources>

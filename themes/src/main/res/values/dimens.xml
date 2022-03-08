@@ -8,5 +8,8 @@
 	<dimen name="medium_large_margin_padding">15dp</dimen>
 	<dimen name="large_margin_padding">20dp</dimen>
 
+	<dimen name="zero_size">0dp</dimen>
+
 	<dimen name="medium_corner_radius">30dp</dimen>
+	<dimen name="large_corner_radius">50dp</dimen>
 </resources>
