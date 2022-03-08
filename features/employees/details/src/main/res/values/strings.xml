@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="details_title">О сотруднике</string>
+	<string name="birth_date">Дата рождения:</string>
+	<string name="full_name">%s %s</string>
+	<string name="age">Возвраст:</string>
+	<string name="empty_date">—</string>
+	<string name="speciality">Специальность:</string>
+</resources>

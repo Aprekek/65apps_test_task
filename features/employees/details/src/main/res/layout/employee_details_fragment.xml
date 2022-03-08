@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:background="@color/blue_light">
+
+	<com.google.android.material.appbar.MaterialToolbar
+		android:layout_width="match_parent"
+		android:layout_height="?attr/actionBarSize"
+		style="@style/Theme.Apps65.Toolbar">
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/back_button"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			style="@style/Theme.Apps65.BackButton"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/details_title"
+			style="@style/Theme.Apps65.AppBarTitle"/>
+	</com.google.android.material.appbar.MaterialToolbar>
+
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:fillViewport="true">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:paddingVertical="@dimen/large_margin_padding">
+
+			<com.google.android.material.imageview.ShapeableImageView
+				android:id="@+id/person_image"
+				android:layout_width="160dp"
+				android:layout_height="160dp"
+				android:layout_gravity="center"
+				android:background="@color/white_blue"
+				app:shapeAppearanceOverlay="@style/Theme.Apps65.RoundedImage"
+				tools:src="@drawable/ic_person"/>
+
+			<com.google.android.material.card.MaterialCardView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginHorizontal="@dimen/medium_margin_padding"
+				android:layout_marginTop="@dimen/large_margin_padding"
+				style="@style/Theme.Apps65.Card">
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:paddingVertical="@dimen/large_margin_padding"
+					android:paddingHorizontal="@dimen/large_margin_padding"
+					android:orientation="vertical">
+
+					<TextView
+						android:id="@+id/full_name"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:textSize="20sp"
+						android:textStyle="bold"
+						android:textColor="?attr/colorOnSurface"
+						android:gravity="center"
+						tools:text="Some Person"/>
+
+					<TextView
+						android:id="@+id/date"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="@dimen/large_margin_padding"
+						android:textColor="?attr/colorOnSurface"
+						android:textSize="16sp"
+						tools:text="Дата Рождения: 16.07.2000"/>
+
+					<TextView
+						android:id="@+id/age"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="@dimen/small_margin_padding"
+						android:textColor="?attr/colorOnSurface"
+						android:textSize="16sp"
+						tools:text="Возраст: 27 лет"/>
+
+					<TextView
+						android:id="@+id/speciality"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="@dimen/small_margin_padding"
+						android:textColor="?attr/colorOnSurface"
+						android:textSize="16sp"
+						tools:text="Специальность: Менеджер, Разработчик"/>
+				</LinearLayout>
+			</com.google.android.material.card.MaterialCardView>
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>
