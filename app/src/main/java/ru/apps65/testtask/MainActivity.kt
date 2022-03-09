@@ -3,15 +3,15 @@ package ru.apps65.testtask
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.github.terrakok.cicerone.NavigatorHolder
-import com.github.terrakok.cicerone.androidx.AppNavigator
 import org.koin.android.ext.android.get
 import org.koin.android.ext.android.inject
 import ru.apps65.testtask.database.data.EmployeeKeyGenerator
+import ru.apps65.testtask.navigation.routers.AnimatedAppNavigator
 
 class MainActivity : AppCompatActivity() {
 
 	private val navigatorHolder: NavigatorHolder by inject()
-	private val navigator = AppNavigator(this, R.id.container)
+	private val navigator = AnimatedAppNavigator(this, R.id.container)
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)

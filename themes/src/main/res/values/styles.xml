@@ -13,20 +13,19 @@
 	</style>
 
 	<style name="Theme.Apps65.Card"
-		parent="Theme.Apps65.CardBase"/>
-
-	<style name="Theme.Apps65.CardBase"
 		parent="Widget.MaterialComponents.CardView">
 		<item name="android:layout_marginTop">@dimen/small_margin_padding</item>
 		<item name="android:layout_marginBottom">@dimen/small_margin_padding</item>
 		<item name="android:layout_marginLeft">@dimen/medium_margin_padding</item>
 		<item name="android:layout_marginRight">@dimen/medium_margin_padding</item>
 		<item name="cardCornerRadius">@dimen/medium_corner_radius</item>
+		<item name="android:layout_marginStart">@dimen/medium_margin_padding</item>
+		<item name="android:layout_marginEnd">@dimen/medium_margin_padding</item>
 		<item name="rippleColor">?attr/cardRippleColor</item>
 	</style>
 
 	<style name="Theme.Apps65.Toolbar"
-		parent="Widget.MaterialComponents.Toolbar.Primary">
+		parent="Widget.MaterialComponents.Toolbar.PrimarySurface">
 	</style>
 
 	<style name="Theme.Apps65.BackButton"

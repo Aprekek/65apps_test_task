@@ -16,7 +16,7 @@
 			android:id="@+id/person_image"
 			android:layout_width="@dimen/personIconSize"
 			android:layout_height="@dimen/personIconSize"
-			android:background="@color/blue_light"
+			android:background="?attr/iconBackground"
 			app:shapeAppearanceOverlay="@style/Theme.Apps65.RoundedImage"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintBottom_toBottomOf="parent"

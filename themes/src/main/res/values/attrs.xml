@@ -2,4 +2,8 @@
 <resources>
 	<attr format="color"
 		name="cardRippleColor"/>
+	<attr format="color"
+		name="iconBackground"/>
+	<attr format="color"
+		name="iconPlaceHolderColor"/>
 </resources>

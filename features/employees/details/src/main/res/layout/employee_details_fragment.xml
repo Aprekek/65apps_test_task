@@ -4,8 +4,7 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:orientation="vertical"
-	android:background="@color/blue_light">
+	android:orientation="vertical">
 
 	<com.google.android.material.appbar.MaterialToolbar
 		android:layout_width="match_parent"
@@ -38,10 +37,10 @@
 
 			<com.google.android.material.imageview.ShapeableImageView
 				android:id="@+id/person_image"
-				android:layout_width="160dp"
-				android:layout_height="160dp"
+				android:layout_width="@dimen/person_image_size"
+				android:layout_height="@dimen/person_image_size"
 				android:layout_gravity="center"
-				android:background="@color/white_blue"
+				android:background="@color/blue_light"
 				app:shapeAppearanceOverlay="@style/Theme.Apps65.RoundedImage"
 				tools:src="@drawable/ic_person"/>
 
@@ -63,7 +62,7 @@
 						android:id="@+id/full_name"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
-						android:textSize="20sp"
+						android:textSize="@dimen/mediumDescriptionTextSize"
 						android:textStyle="bold"
 						android:textColor="?attr/colorOnSurface"
 						android:gravity="center"
@@ -74,27 +73,24 @@
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:layout_marginTop="@dimen/large_margin_padding"
-						android:textColor="?attr/colorOnSurface"
-						android:textSize="16sp"
-						tools:text="Дата Рождения: 16.07.2000"/>
+						tools:text="Дата Рождения: 16.07.2000"
+						style="@style/Theme.Apps65.DescriptionText"/>
 
 					<TextView
 						android:id="@+id/age"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:layout_marginTop="@dimen/small_margin_padding"
-						android:textColor="?attr/colorOnSurface"
-						android:textSize="16sp"
-						tools:text="Возраст: 27 лет"/>
+						tools:text="Возраст: 27 лет"
+						style="@style/Theme.Apps65.DescriptionText"/>
 
 					<TextView
 						android:id="@+id/speciality"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:layout_marginTop="@dimen/small_margin_padding"
-						android:textColor="?attr/colorOnSurface"
-						android:textSize="16sp"
-						tools:text="Специальность: Менеджер, Разработчик"/>
+						tools:text="Специальность: Менеджер, Разработчик"
+						style="@style/Theme.Apps65.DescriptionText"/>
 				</LinearLayout>
 			</com.google.android.material.card.MaterialCardView>
 		</LinearLayout>
