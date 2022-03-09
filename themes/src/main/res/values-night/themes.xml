@@ -1,0 +1,7 @@
+<resources>
+
+	<style name="Theme.Apps65"
+		parent="Theme.Apps65.Base">
+		<item name="android:statusBarColor">@android:color/transparent</item>
+	</style>
+</resources>

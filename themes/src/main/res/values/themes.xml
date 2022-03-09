@@ -1,8 +1,14 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
 	<style name="Theme.Apps65"
-		parent="Theme.MaterialComponents.Light.NoActionBar">
+		parent="Theme.Apps65.Base">
 
+		<item name="android:colorBackground">@color/white_blue</item>
+		<item name="android:statusBarColor">?attr/colorPrimary</item>
+	</style>
+
+	<style name="Theme.Apps65.Base"
+		parent="Theme.MaterialComponents.DayNight.NoActionBar">
 		<item name="colorPrimary">@color/blue_main</item>
 		<item name="colorPrimaryVariant">@color/blue_dark</item>
 		<item name="colorOnPrimary">@color/white</item>
@@ -10,9 +16,7 @@
 		<item name="colorSecondary">@color/blue_dark</item>
 
 		<item name="cardRippleColor">@color/blue_light</item>
-
-		<item tools:targetApi="l"
-			name="android:statusBarColor">?attr/colorPrimary
-		</item>
+		<item name="iconBackground">@color/blue_light</item>
+		<item name="iconPlaceHolderColor">@color/black</item>
 	</style>
 </resources>
