@@ -1,11 +1,11 @@
-package ru.apps65.testtask.network.retrofit
+package ru.apps65.testtask.network.network
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-object RetrofitProvider {
+object NetworkProvider {
 
 	private const val BASE_URL = "https://gitlab.65apps.com/65gb/static/raw/master/"
 
