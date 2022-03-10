@@ -20,7 +20,7 @@ class EmployeesViewModel(
 	private val _state = MutableStateFlow<EmployeesState>(EmployeesState.Initial)
 	val state = _state.asStateFlow()
 
-	private var specialityFilter = listOf(speciality)
+	private val specialityFilter = listOf(speciality)
 
 	private val exceptionHandler = CoroutineExceptionHandler { _, throwable ->
 		Log.d(this::class.qualifiedName, throwable.message.toString())
@@ -39,11 +39,6 @@ class EmployeesViewModel(
 				employees.isNotEmpty()
 			} ?: EmployeesState.EmptyContent
 		}
-	}
-
-	fun newFilter(specialityFilter: List<Long>) {
-		this.specialityFilter = specialityFilter
-		reload()
 	}
 
 	fun reload() {

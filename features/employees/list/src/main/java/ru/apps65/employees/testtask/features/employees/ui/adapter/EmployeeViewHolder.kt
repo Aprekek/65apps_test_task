@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import ru.apps65.employees.testtask.features.employees.R
 import ru.apps65.employees.testtask.features.employees.databinding.EmployeeItemBinding
 import ru.apps65.testtasl.shared.employee.domain.entities.Employee
