@@ -119,16 +119,16 @@ class EmployeesFragment : BaseFragment<EmployeesFragmentBinding>() {
 		binding.emptyListMessage.visibility = View.VISIBLE
 	}
 
-	override fun onDestroy() {
-		super.onDestroy()
-		errorMessageBinding = null
-	}
-
-	fun loadImageForItem(view: ImageView, url: String?) {
+	private fun loadImageForItem(view: ImageView, url: String?) {
 		Glide.with(this)
 			.load(url)
 			.placeholder(ru.apps65.testtask.themes.R.drawable.ic_person)
 			.centerCrop()
 			.into(view)
+	}
+
+	override fun onDestroy() {
+		errorMessageBinding = null
+		super.onDestroy()
 	}
 }
